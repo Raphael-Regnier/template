@@ -1,0 +1,29 @@
+---
+layout: base.njk
+title: About Us
+---
+
+<div class="max-w-4xl mx-auto prose prose-lg">
+  <h1 class="text-4xl font-bold mb-8 text-center">{{ title }}</h1>
+  
+  <div class="space-y-6">
+    <p>
+      Welcome to {{ site.name }}! We're passionate about bringing you the best content about Star Wars characters
+      and their amazing stories.
+    </p>
+    
+    <h2 class="text-2xl font-bold mt-8">Our Mission</h2>
+    <p>
+      Our mission is to create a comprehensive database of Star Wars characters, providing detailed information
+      about their backgrounds, relationships, and roles in the Star Wars universe.
+    </p>
+    
+    <h2 class="text-2xl font-bold mt-8">Contact Us</h2>
+    <p>
+      Have questions or suggestions? Feel free to reach out to us at 
+      <a href="mailto:{{ site.author.email }}" class="text-blue-600 hover:text-blue-800">
+        {{ site.author.email }}
+      </a>
+    </p>
+  </div>
+</div>

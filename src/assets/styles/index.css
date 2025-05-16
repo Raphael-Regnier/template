@@ -1,0 +1,1283 @@
+
+/* ////////////////////////////////////////////////////////
+
+1   2   3   4   5   6   7   8   9   10  11  12  13
+|   |   |   |   |   |   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+---+---+---+---+---+
+|                                               |
++---+---+---+---+---+---+---+---+---+---+---+---+
+
+HAT & THE GANG
+PLANET MARS
+
+LAST UPDATE  06/MAY/2025
+V 00.01
+
+//////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+
+@import "tailwindcss";
+
+
+
+
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////
+DESIGN TOKENS • THEME
+//////////////////////////////////////////////////////// */
+
+@theme {
+/* ////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+PRIMITIVE TOKENS (1ST TIER)
+Direct values without references to other tokens
+//////////////////////////////////////////////////////// */
+
+
+/* ////////////////////////////////////////////////////////
+COLOR • 1ST TIER
+//////////////////////////////////////////////////////// */
+
+    /* BRAND //////////////// */
+    
+    /* Primary */
+    --primary-50: var(--color-orange-50);
+    --primary-100: var(--color-orange-100);
+    --primary-200: var(--color-orange-200);
+    --primary-300: var(--color-orange-300);
+    --primary-400: var(--color-orange-400);
+    --primary-500: var(--color-orange-500);
+    --primary-600: var(--color-orange-600);
+    --primary-700: var(--color-orange-700);
+    --primary-800: var(--color-orange-800);
+    --primary-900: var(--color-orange-900);
+    --primary-950: var(--color-orange-950);
+
+    /* Secondary */
+    --secondary-50: var(--color-violet-50);
+    --secondary-100: var(--color-violet-100);
+    --secondary-200: var(--color-violet-200);
+    --secondary-300: var(--color-violet-300);
+    --secondary-400: var(--color-violet-400);
+    --secondary-500: var(--color-violet-500);
+    --secondary-600: var(--color-violet-600);
+    --secondary-700: var(--color-violet-700);
+    --secondary-800: var(--color-violet-800);
+    --secondary-900: var(--color-violet-900);
+    --secondary-950: var(--color-violet-950);
+    
+
+
+    
+    /* NEUTRALS //////////////// */
+    --neutral-white: oklch(1 0 0);
+    --neutral-50: oklch(0.96 0 0);
+    --neutral-100: oklch(0.92 0 0);
+    --neutral-200: oklch(0.85 0 0);
+    --neutral-300: oklch(0.77 0 0);
+    --neutral-400: oklch(0.68 0 0);
+    --neutral-500: oklch(0.6 0 0);
+    --neutral-600: oklch(0.51 0 0);
+    --neutral-700: oklch(0.42 0 0);
+    --neutral-800: oklch(0.32 0 0);
+    --neutral-900: oklch(0.22 0 0);
+    --neutral-950: oklch(0.16 0 0);
+    --neutral-black: oklch(0 0 0);
+
+
+
+
+    /* UTILITIES //////////////// */
+
+    /* Red */
+    --utility-red-50: var(--color-red-50);
+    --utility-red-100: var(--color-red-100);
+    --utility-red-200: var(--color-red-200);
+    --utility-red-300: var(--color-red-300);
+    --utility-red-400: var(--color-red-400);
+    --utility-red-500: var(--color-red-500);
+    --utility-red-600: var(--color-red-600);
+    --utility-red-700: var(--color-red-700);
+    --utility-red-800: var(--color-red-800);
+    --utility-red-900: var(--color-red-900);
+    --utility-red-950: var(--color-red-950);
+
+    /* Orange */
+    --utility-orange-50: var(--color-amber-50);
+    --utility-orange-100: var(--color-amber-100);
+    --utility-orange-200: var(--color-amber-200);
+    --utility-orange-300: var(--color-amber-300);
+    --utility-orange-400: var(--color-amber-400);
+    --utility-orange-500: var(--color-amber-500);
+    --utility-orange-600: var(--color-amber-600);
+    --utility-orange-700: var(--color-amber-700);
+    --utility-orange-800: var(--color-amber-800);
+    --utility-orange-900: var(--color-amber-900);
+    --utility-orange-950: var(--color-amber-950);
+
+    /* Green */
+    --utility-green-50: var(--color-green-50);
+    --utility-green-100: var(--color-green-100);
+    --utility-green-200: var(--color-green-200);
+    --utility-green-300: var(--color-green-300);
+    --utility-green-400: var(--color-green-400);
+    --utility-green-500: var(--color-green-500);
+    --utility-green-600: var(--color-green-600);
+    --utility-green-700: var(--color-green-700);
+    --utility-green-800: var(--color-green-800);
+    --utility-green-900: var(--color-green-900);
+    --utility-green-950: var(--color-green-950);
+
+    /* Blue */
+    --utility-blue-50: var(--color-blue-50);
+    --utility-blue-100: var(--color-blue-100);
+    --utility-blue-200: var(--color-blue-200);
+    --utility-blue-300: var(--color-blue-300);
+    --utility-blue-400: var(--color-blue-400);
+    --utility-blue-500: var(--color-blue-500);
+    --utility-blue-600: var(--color-blue-600);
+    --utility-blue-700: var(--color-blue-700);
+    --utility-blue-800: var(--color-blue-800);
+    --utility-blue-900: var(--color-blue-900);
+    --utility-blue-950: var(--color-blue-950);
+
+
+
+
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
+DIMENSIONS • 1ST TIER
+//////////////////////////////////////////////////////// */
+
+    /* FLUID SPACINGS //////////////// */
+    --spacer-0-2-5: calc(var(--spacer) / 4);
+    --spacer-0-5: calc(var(--spacer) / 2);
+    --spacer: calc(var(--f-size-body) / 4); /* base */
+    --spacer-2: calc(var(--spacer) * 2);
+    --spacer-1-5: calc(var(--spacer) * 1.5);
+    --spacer-3: calc(var(--spacer) * 3);
+    --spacer-4: calc(var(--spacer) * 4); /* body font-size */
+    --spacer-5: calc(var(--spacer) * 5);
+    --spacer-6: calc(var(--spacer) * 6); /* body line-height */
+    --spacer-7: calc(var(--spacer) * 7);
+    --spacer-8: calc(var(--spacer) * 8);
+    --spacer-9: calc(var(--spacer) * 9);
+    --spacer-10: calc(var(--spacer) * 10);
+    --spacer-11: calc(var(--spacer) * 11);
+    --spacer-12: calc(var(--spacer) * 12);
+    --spacer-13: calc(var(--spacer) * 13);
+    --spacer-14: calc(var(--spacer) * 14);
+    --spacer-15: calc(var(--spacer) * 15);
+    --spacer-16: calc(var(--spacer) * 16);
+    --spacer-17: calc(var(--spacer) * 17);
+    --spacer-18: calc(var(--spacer) * 18);
+    --spacer-19: calc(var(--spacer) * 19);
+    --spacer-20: calc(var(--spacer) * 20);
+    --spacer-21: calc(var(--spacer) * 21);
+    --spacer-22: calc(var(--spacer) * 22);
+    --spacer-23: calc(var(--spacer) * 23);
+    --spacer-24: calc(var(--spacer) * 24);
+    --spacer-48: calc(var(--spacer) * 48);
+    --spacer-96: calc(var(--spacer) * 96);
+
+
+
+
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
+TYPOGRAPHY • 1ST TIER
+//////////////////////////////////////////////////////// */
+
+    /* FONT FAMILY //////////////// */
+    --f-family-sans: "Inter", sans-serif;
+    --f-family-serif: "Times New Roman", serif;
+    --f-family-mono: "Inter", sans-serif;
+
+
+
+
+    /* FLUID SCALE //////////////// */
+
+    /* Foundations */
+    --f-scale: 1.618; /* golden ratio */
+    --f-size-fluid: calc(0.66vw + 0.44rem); /* 16px @ 1358px vw */
+
+    /* Body */
+    --f-size-body: max(1rem, var(--f-size-fluid));
+    
+    /* Small */
+    --f-size-xsmall: calc(var(--f-size-body) * 0.75); /* 12px @ 1358px vw */
+    --f-size-small: calc(var(--f-size-body) * 0.875); /* 14px @ 1358px vw */
+    
+    /* Headings */
+    --f-size-1: var(--f-size-fluid);
+    --f-size-2: calc(var(--f-size-1) * var(--f-scale));
+    --f-size-3: calc(var(--f-size-2) * var(--f-scale));
+    --f-size-4: calc(var(--f-size-3) * var(--f-scale));
+    --f-size-5: calc(var(--f-size-4) * var(--f-scale));
+    --f-size-6: calc(var(--f-size-5) * var(--f-scale));
+    --f-size-7: calc(var(--f-size-6) * var(--f-scale));
+    --f-size-8: calc(var(--f-size-7) * var(--f-scale));
+    --f-size-9: calc(var(--f-size-8) * var(--f-scale));
+    --f-size-10: calc(var(--f-size-9) * var(--f-scale));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+SEMANTIC TOKENS (2ND TEAR)
+Reference primitive tokens to create semantic meaning
+//////////////////////////////////////////////////////// */
+
+
+/* ////////////////////////////////////////////////////////
+COLOR • 2ND TIER
+//////////////////////////////////////////////////////// */    
+    
+    /* CONTENT //////////////// */
+
+    /* Neutrals */
+    --color-default: var(--neutral-800);
+    --color-heading: var(--neutral-800);
+    --color-subtle: var(--neutral-600);
+    --color-light: var(--neutral-200);
+    --color-knockout: var(--neutral-100);
+    --color-disabled: var(--neutral-400);
+
+    /* Brand */
+    --color-brand: var(--primary-500);
+    --color-brand-knockout: var(--primary-100);
+
+    /* Utilities */
+    --color-info: var(--utility-blue-600);
+    --color-success: var(--utility-green-600);
+    --color-warning: var(--utility-orange-600);
+    --color-critical: var(--utility-red-600);
+
+
+
+
+    /* BACKGROUND //////////////// */
+
+    /* Neutrals */
+    --color-background: var(--neutral-100);
+    --color-background-subtle: var(--neutral-300);
+    --color-background-knockout: var(--neutral-800);
+
+    /* Brand */
+    --color-background-brand: var(--primary-700);
+    --color-background-brand-knockout: var(--primary-200);
+
+    /* Utilities */
+    --color-background-info: var(--utility-blue-100);
+    --color-background-success: var(--utility-green-100);
+    --color-background-warning: var(--utility-orange-100);
+    --color-background-critical: var(--utility-red-100);
+
+
+
+
+    /* BORDER //////////////// */
+
+    /* Neutrals */
+    --color-border: var(--neutral-100);
+    --color-border-subtle: var(--neutral-300);
+    --color-border-knockout: var(--neutral-800);
+
+    /* Brand */
+    --color-border-brand: var(--primary-700);
+    --color-border-brand-knockout: var(--primary-200);
+
+    /* Utilities */
+    --color-border-info: var(--utility-blue-500);
+    --color-border-success: var(--utility-green-500);
+    --color-border-warning: var(--utility-orange-500);
+    --color-border-critical: var(--utility-red-500);
+        
+
+
+    
+    /* DISABLED //////////////// */
+    --color-disabled: var(--neutral-400);
+    --color-disabled-knockout: var(--neutral-500);
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
+DIMENSIONS • 2ND TIER
+//////////////////////////////////////////////////////// */
+
+    /* SPACING SCALE //////////////// */
+    --spacing-0-5f: var(--spacer-0-5); /* base/2 */
+    --spacing-1f: var(--spacer); /* base */
+    --spacing-1-5f: var(--spacer-1-5); /* line-height/4 */
+    --spacing-2f: var(--spacer-2);  /* font-size/2 */
+    --spacing-3f: var(--spacer-3); /* line-height/2 */
+    --spacing-4f: var(--spacer-4); /* font-size */
+    --spacing-6f: var(--spacer-6); /* line-height */
+    --spacing-8f: var(--spacer-8); /* font-size*2 - gutter */
+    --spacing-12f: var(--spacer-12); /* line-height*2 font-size*3 */
+    --spacing-24f: var(--spacer-24); /* line-height*4 */
+    --spacing-48f: var(--spacer-48); /* line-height*8 */
+    --spacing-96f: var(--spacer-96); /* line-height*16 */
+
+
+
+
+    /* RADIUS SCALE //////////////// */
+    --radius-nul: 0;
+    --radius-2: var(--spacer-0-5);
+    --radius-4: var(--spacer);
+    --radius-6: var(--spacer-1-5);
+    --radius-8: var(--spacer-2);
+    --radius-12: var(--spacer-3);
+    --radius-16: var(--spacer-4);
+    --radius-24: var(--spacer-6);
+    --radius-32: var(--spacer-8);
+
+
+
+
+    /* BORDER WIDTHS //////////////// */
+    --width-1: var(--spacer-0-2-5);
+    --width-2: var(--spacer-0-5);
+    --width-4: var(--spacer);
+    --width-6: var(--spacer-1-5);
+    --width-8: var(--spacer-2);
+
+    
+
+
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
+TYPOGRAPHY • 2ND TIER
+//////////////////////////////////////////////////////// */
+
+    /* HEADING //////////////// */
+
+    /* Font family */
+    --font-heading: var(--f-family-sans);
+    --font-display: var(--f-family-serif);
+
+    /* Font sizes */
+    --text-h0: var(--f-size-10);
+    --text-h1: var(--f-size-5);
+    --text-h2: var(--f-size-4);
+    --text-h3: var(--f-size-3);
+
+    /* Font weight */
+    --font-weight-headings: var(--font-weight-medium);
+    --font-weight-displays: var(--font-weight-normal);
+
+    /* Line heights */
+    --leading-h0: 1;
+    --leading-h1: var(--leading-tight);
+    --leading-h2: var(--leading-tight);
+    --leading-h3: var(--leading-tight);
+
+    /* Letter spacings */
+    --tracking-h0: var(--tracking-tighter);
+    --tracking-h1: var(--tracking-tight);
+    --tracking-h2: var(--tracking-tight);
+    --tracking-h3: var(--tracking-tight);
+
+
+
+
+    /* BODY //////////////// */
+
+    /* Family */
+    --font-body: var(--f-family-sans);
+    
+    /* Font size */
+    --text-body: var(--f-size-body);
+
+    /* Font weight */
+    --font-weight-text: var(--font-weight-normal);
+
+    /* Line height */
+    --leading-body: var(--leading-normal);
+
+    /* Letter spacings */
+    --tracking-body: var(--tracking-normal);
+
+
+
+
+    /* LEGEND //////////////// */
+
+    /* Family */
+    --font-legend: var(--f-family-sans);
+    
+    /* Font size */
+    --text-legend: var(--f-size-small);
+
+    /* Font weight */
+    --font-weight-legends: var(--font-weight-normal);
+
+    /* Line height */
+    --leading-legend: var(--spacing-6f);
+
+    /* Letter spacings */
+    --tracking-legend: var(--tracking-normal);
+
+
+
+
+    /* LABEL //////////////// */
+
+    /* Family */
+    --font-label: var(--f-family-sans);
+
+    /* Font size */
+    --text-label: var(--f-size-body);
+
+    /* Font weight */
+    --font-weight-labels: var(--font-weight-normal);
+
+    /* Line height */
+    --leading-label: var(--leading-normal);
+
+    /* Letter spacings */
+    --tracking-label: var(--tracking-normal);
+        
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
+SHADOWS • 2ND TIER
+//////////////////////////////////////////////////////// */
+
+--shadow-tall: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+COMPONENT TOKENS (3RD TEAR)
+Reference semantic tokens to create component-specific tokens
+//////////////////////////////////////////////////////// */
+
+/* ////////////////////////////////////////////////////////
+SHARED PROPERTIES • 3RD TIER
+//////////////////////////////////////////////////////// */
+
+    /* DIMENSIONS //////////////// */
+
+    /* Paddings */
+    --spacing-padding-md-y: var(--spacing-3f); /* guarantees button and input fields have the same height */
+
+    /* Radius */
+    --radius-md: var(--radius-12); /* guarantees button and input fields have the same border radius */
+
+    /* Border width */
+    --border-md-width: var(--width-2);
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
+LINK • 3RD TIER
+//////////////////////////////////////////////////////// */
+
+    /* DIMENSIONS //////////////// */
+
+
+
+
+    /* COLOR LINK //////////////// */
+    --color-link: var(--neutral-800);
+    --color-link-hover: var(--neutral-800);
+    --color-link-knockout: var(--neutral-100);
+    --color-link-hover-knockout: var(--neutral-100);
+
+
+
+
+    /* ANIMATION //////////////// */
+
+    /* Easing */
+    --ease-link: var(--ease-in-out);
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
+BUTTON • 3RD TIER
+//////////////////////////////////////////////////////// */
+
+    /* DIMENSIONS //////////////// */
+
+    /* Paddings */
+    --spacing-padding-button-x: var(--spacing-6f);
+    --spacing-padding-button-y: var(--spacing-padding-md-y);
+
+    /* Radius */
+    --radius-button: var(--radius-md);
+
+    /* Border width */
+    --border-button-width: var(--border-md-width);
+
+
+
+
+    /* COLORS BUTTON PRIMARY //////////////// */
+
+    /* Content */
+    --color-button-primary: var(--neutral-100);
+    --color-button-primary-hover: var(--neutral-800);
+    --color-button-primary-active: var(--neutral-800);
+
+    /* Background */
+    --color-button-primary-background: var(--neutral-800);
+    --color-button-primary-background-hover: var(--neutral-100);
+    --color-button-primary-background-active: var(--neutral-800);
+
+
+
+
+    /* COLORS BUTTON //////////////// */
+
+    /* Content */
+    --color-button: var(--neutral-800);
+    --color-button-hover: var(--neutral-800);
+    --color-button-active: var(--neutral-800);
+
+    /* Background */
+    --color-button-background: var(--neutral-100);
+    --color-button-background-hover: var(--neutral-200);
+    --color-button-background-active: var(--neutral-800);
+
+    /* Border */
+    --color-button-border: var(--neutral-800);
+    --color-button-border-hover: var(--neutral-800);
+    --color-button-border-active: var(--neutral-800);
+
+
+
+
+    /* ANIMATION //////////////// */
+
+    /* Easing */
+    --ease-button: var(--ease-in-out);
+    --ease-button-hover: var(--ease-in-out);
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
+FORM INPUTS • 3RD TIER
+//////////////////////////////////////////////////////// */
+
+    /* DIMENSIONS //////////////// */
+    
+    /* Gap */
+    --spacing-gap-input-field: var(--spacing-1-5f);
+
+    /* Field paddings */
+    --spacing-padding-form-x: var(--spacing-4f);
+    --spacing-padding-form-y: var(--spacing-padding-md-y);
+
+    /* Radius */
+    --radius-form: var(--radius-md);
+
+    /* Border width */
+    --border-form-width: var(--border-md-width);
+
+
+
+
+    /* COLOR //////////////// */
+
+    /* Content */
+    --color-form: var(--neutral-800);
+    --color-form-hover: var(--neutral-100);
+    --color-form-active: var(--neutral-100);
+    --color-form-checked: var(--utility-blue-500);
+
+
+    /* Background */
+    --color-form-background: var(--neutral-400);
+    --color-form-background-hover: var(--neutral-800);
+    --color-form-background-active: var(--neutral-800);
+
+    /* Border */
+    --color-form-border: var(--neutral-800);
+    --color-form-border-hover: var(--neutral-800);
+    --color-form-border-active: var(--neutral-800);
+
+
+
+
+    /* ANIMATION //////////////// */
+
+    /* Easing */
+    --ease-form: var(--ease-in-out);
+
+
+
+
+
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////
+BASE
+//////////////////////////////////////////////////////// */
+
+@layer base {
+/* ////////////////////////////////////////////////////////
+GLOBAL 
+//////////////////////////////////////////////////////// */
+
+    * {
+        @apply box-border focus;
+    }
+    
+    body {
+        @apply flex flex-col min-h-screen paragraph;
+    }
+
+    
+    p {
+        @apply mb-6f;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////
+UTILITIES
+//////////////////////////////////////////////////////// */
+
+/* ////////////////////////////////////////////////////////
+TYPOGRAPHY • UTILITIES
+//////////////////////////////////////////////////////// */
+
+/* HEADINGS //////////////// */
+@utility h0 {
+    @apply text-h0 leading-h0 tracking-h0 font-display font-displays italic text-light;
+}
+
+@utility h1 {
+    @apply text-h1 leading-h1 tracking-h1 font-heading font-headings text-heading;
+}
+
+@utility h2 {
+    @apply text-h2 leading-h2 tracking-h2 font-heading font-headings text-heading;
+}
+
+@utility h3 {
+    @apply text-h3 leading-h3 tracking-h3 font-heading font-headings text-heading;
+}
+
+
+
+
+/* BODY //////////////// */
+@utility paragraph {
+    @apply font-body text-body font-text leading-body tracking-body text-default;
+}
+
+@utility legend {
+    @apply font-legend text-legend font-legends leading-legend tracking-legend text-subtle;
+}
+
+
+
+
+/* LABELS //////////////// */
+@utility label {
+    @apply font-label text-label font-labels leading-label tracking-label text-default;
+}
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
+LAYOUT • UTILITIES
+//////////////////////////////////////////////////////// */
+
+/* SECTION //////////////// */
+@utility section-mx {
+    @apply mx-4 md:mx-12;
+}
+
+@utility section-my {
+    @apply my-24f md:my-48f;
+}
+
+
+
+
+/* LAYOUT //////////////// */
+@utility layout {
+    @apply grid relative gap-x-8f;
+}
+
+
+
+
+/* GRIDS LG //////////////// */
+@utility grid-12-lg {
+    @apply layout lg:grid-cols-12;
+}
+
+@utility grid-10-lg {
+    @apply layout lg:grid-cols-10;
+}
+
+@utility grid-9-lg {
+    @apply layout lg:grid-cols-9;
+}
+
+@utility grid-8-lg {
+    @apply layout lg:grid-cols-8;
+}
+
+@utility grid-6-lg {
+    @apply layout lg:grid-cols-6;
+}
+
+
+
+
+/* GRIDS MD //////////////// */
+@utility grid-12-md {
+    @apply layout md:grid-cols-12;
+}
+
+@utility grid-10-md {
+    @apply layout md:grid-cols-10;
+}
+
+@utility grid-9-md {
+    @apply layout md:grid-cols-9;
+}
+
+@utility grid-8-md {
+    @apply layout md:grid-cols-8;
+}
+
+@utility grid-6-md {
+    @apply layout md:grid-cols-6;
+}
+
+@utility grid-4-md {
+    @apply layout md:grid-cols-4;
+}
+
+@utility grid-3-md {
+    @apply layout md:grid-cols-3;
+}
+
+@utility grid-2-md {
+    @apply layout md:grid-cols-2;
+}
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
+ANIMATION • UTILITIES
+//////////////////////////////////////////////////////// */
+
+/* BUTTON //////////////// */
+@utility animation-button {
+    @apply ease-button hover:ease-button-hover focus-visible:ease-button-hover transition-colors  duration-400;
+}
+
+
+
+
+/* FORM //////////////// */
+@utility animation-form {
+    @apply ease-form transition-colors  duration-300;
+}
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
+MISCELLANEOUS • UTILITIES
+//////////////////////////////////////////////////////// */
+
+/* FOCUS //////////////// */
+@utility focus {
+    @apply focus-visible:outline-none rounded;
+    &:focus-visible {
+        box-shadow: 0 0 0 4px var(--color-default), 0 0 0 6px var(--color-subtle), rgba(100, 100, 111, 0.8) 0px 7px 29px 0px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////
+COMPONENTS
+//////////////////////////////////////////////////////// */
+
+@layer components {
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////
+ATOMS • COMPONENTS
+//////////////////////////////////////////////////////// */
+    
+/* ////////////////////////////////////////////////////////
+LINK • ATOM
+//////////////////////////////////////////////////////// */
+    /* .link {
+        @apply font-link text-link font-links leading-link text-default;
+    } */
+
+
+
+
+
+
+
+    
+/* ////////////////////////////////////////////////////////
+BUTTON • ATOM
+//////////////////////////////////////////////////////// */
+
+    /* BUTTON CORE //////////////// */
+
+    .button {
+        /* Dimensions */
+        @apply px-padding-button-x py-padding-button-y rounded-button label h-(--spacing-12f);
+        
+        /* Properties */
+        @apply flex justify-center items-center whitespace-nowrap;
+        
+        /* Animation */
+        @apply animation-button;
+
+    
+    
+
+        /* BUTTON PRIMARY //////////////// */
+
+        &.button-prim {
+            /* Default */
+            @apply bg-button-primary-background  text-button-primary;
+    
+            /* Hover */
+            @apply hover:bg-button-primary-background-hover hover:text-button-primary-hover;
+    
+            /* Focus */
+            @apply focus-visible:bg-button-primary-background-hover focus-visible:text-button-primary-hover;
+    
+            /* Active */
+            @apply active:bg-button-primary-background-active active:text-button-primary-active;
+    
+            /* Disabled */
+            @apply disabled:bg-disabled disabled:text-disabled-knockout;
+        }
+    
+    
+
+
+        /* BUTTON SECONDARY //////////////// */
+
+        &.button-sec {
+            /* Default */
+            @apply border-(length:--border-button-width) font-medium bg-button-background border-button-border text-button;
+            
+            /* Hover */
+            @apply hover:bg-button-background-hover hover:border-button-hover hover:text-button-hover;
+            
+            /* Focus */
+            @apply focus-visible:hover:bg-button-background-hover focus-visible:border-button-hover focus-visible:text-button-hover;
+            
+            /* Active */
+            @apply active:bg-button-background-active active:border-button-active active:text-button-active;
+            
+            /* Disabled */
+            @apply disabled:border-disabled disabled:text-disabled;
+        }
+    }
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
+CONTROLS • ATOM
+//////////////////////////////////////////////////////// */
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
+INPUT FIELD • ATOM
+//////////////////////////////////////////////////////// */
+
+    /* INPUT FIELD //////////////// */
+
+    .input-field {
+        @apply relative flex flex-col gap-gap-input-field;
+
+        input, select {
+            @apply h-(--spacing-12f);
+        }
+
+
+
+
+        /* GROUP LABEL //////////////// */
+
+        .group-label {
+            /* Layout */
+            @apply grid grid-cols-4 gap-x-8f items-baseline;    
+        }
+
+
+
+
+        /* LABEL //////////////// */
+
+        /* label {
+            @apply col-span-2;
+        } */
+
+
+
+        /* INPUT FORMAT //////////////// */
+
+        .input-format {
+            @apply col-start-2 col-span-2 legend;
+        }
+
+        /* &:has(textarea) {
+            .input-format {
+                @apply hidden;
+            }
+        } */
+
+        
+        
+        
+        /* INPUT LEGEND //////////////// */
+    
+        /* Default */
+        .input-legend {
+            @apply hidden col-start-4 legend text-right;   
+        }
+        
+        /* Required */
+        &:has(input[required]), &:has(select[required]), &:has(textarea[required]) {
+            .input-legend {
+                @apply inline-block;
+            }
+        }
+
+
+
+
+        /* CHARACTER COUNT //////////////// */
+
+        /* Default */
+        .character-count {
+            @apply hidden col-start-2 row-start-1 legend;
+        }
+
+        /* Visible */
+        &:has(textarea[maxlength]) {
+            .character-count {
+                @apply inline-block;
+            }
+        }
+
+    
+
+
+
+        /* INPUT //////////////// */
+
+        input, select, textarea {
+            /* Dimensions */
+            @apply px-padding-form-x py-padding-form-y rounded-form label;
+
+            /* Animation */
+            @apply animation-form;
+
+            /* Default */
+            @apply bg-form-background;
+            
+            /* Hover */
+            @apply hover:bg-form-background-hover hover:text-form-hover;
+            
+            /* Focus and active */
+            @apply focus-visible:bg-form-background-active focus-visible:text-form-active active:bg-form-background-active active:text-form-active;
+
+            /* Valid - after touch */
+            &.touched:valid {
+                @apply border-(length:--border-form-width) border-border-success;
+            }
+
+            /* Invalid - after touch */
+            &.touched:invalid {
+                @apply border-(length:--border-form-width) border-border-critical;
+            }
+        }
+
+
+
+
+        /* SELECT //////////////// */
+        
+        /* select {
+            
+        } */
+        
+
+
+
+        /* INPUT ERROR MESSAGE //////////////// */
+        
+        /* Default */
+        .input-error-message {
+            @apply absolute hidden legend text-critical;
+            bottom: calc(var(--spacing-1f) * -7.5);
+        }
+        
+        /* Icon */
+        .input-error-message-icon {
+            @apply hidden absolute bottom-4f h-4f w-4f text-border-critical;
+            left: calc(100% + var(--spacing-4f));
+        }
+
+        /* Invalid */
+        &:has(input.touched:invalid), &:has(select.touched:invalid), &:has(textarea.touched:invalid) {
+            .input-error-message, .input-error-message-icon {
+                @apply block;
+            }
+        }
+            
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////
+MOLECULES • COMPONENTS
+//////////////////////////////////////////////////////// */
+
+/* ////////////////////////////////////////////////////////
+FORM • MOLECULE
+//////////////////////////////////////////////////////// */
+    .form {
+        @apply flex flex-col gap-12f;
+    }
+    
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
+CARD • MOLECULE
+//////////////////////////////////////////////////////// */
+    .card {
+        @apply md:col-span-6 lg:col-span-4;
+
+        a {
+           @apply block rounded-xl; 
+        }
+
+        figure {
+            @apply bg-[url(//unsplash.it/510)] bg-cover rounded-xl shadow-tall;
+            padding-block: 13vw;
+        }
+
+        .group-content {
+            @apply pt-10;
+        }
+
+        span.button {
+            @apply w-fit
+        }
+    }
+
+
+    
+    
+    
+    
+
+
+
+ 
+}

@@ -1,0 +1,27 @@
+{
+  "name": "02-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "npx postcss ./src/assets/styles/index.css -o ./dist/assets/styles/index.css",
+    "watch:css": "npx postcss ./src/assets/styles/index.css -o ./dist/assets/styles/index.css --watch",
+    "build:11ty": "eleventy",
+    "watch:11ty": "eleventy --serve",
+    "build": "npm run build:css && npm run build:11ty",
+    "start": "npx concurrently \"npm run watch:css\" \"npm run watch:11ty\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.0",
+    "@tailwindcss/postcss": "^4.1.7",
+    "concurrently": "^7.5.0",
+    "cssnano": "^7.0.7",
+    "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.1.7"
+  }
+}
